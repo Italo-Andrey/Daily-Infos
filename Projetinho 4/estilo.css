@@ -1,0 +1,52 @@
+body{
+    background-color:#f8c990;
+    font: normal 15pt Arial;
+    text-align: center;
+
+    
+}
+
+header{
+    color: white;
+    text-align: center;
+}
+
+section {
+    background-color: white;
+    padding: 1cm 0cm 15cm;
+    margin: auto;
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.192);
+}
+div#saudacao{
+    text-align: start;
+}
+p.city{
+    text-align: center;
+    line-height: 100px;
+} 
+input {
+    color: white;
+    background-color: #bb2d3b;
+    border-color: #b02a37;;
+    padding: 0px 20px;
+    text-align: center;
+    line-height: 1.5;
+    font-weight: 400;
+    border: 1px transparent;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    border-radius: 10px;
+    cursor: pointer;
+ 
+}
+div#news{
+padding-top: 2cm;
+text-align: justify;
+
+}
+
+footer{
+    color: white;
+    text-align: center;
+}
