@@ -1,12 +1,12 @@
 
   // Logica Saudação
 
-    var today = new Date();
-    var h = today.getHours();
-    var m = today.getMinutes();
+    let today = new Date();
+    let h = today.getHours();
+    let m = today.getMinutes();
     
-    var dayName = new Array ("Domingo", "Segunda", "Terça", "Quarta", "Quinta", "Sexta", "Sabado");
-    var monName = new Array ("Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro");        
+    let dayName = new Array ("Domingo", "Segunda", "Terça", "Quarta", "Quinta", "Sexta", "Sabado");
+    let monName = new Array ("Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro");        
                 
      let res = document.getElementById('res')
     let img = document.getElementById('img')
