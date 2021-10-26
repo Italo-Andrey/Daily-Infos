@@ -23,7 +23,7 @@
     img.src="img/cloudy-day.png"
     document.body.style.background = '#b9846f'
 } else{
-  res.innerHTML += `<p>Boa Noite, Usuário   ! Hoje é ${dayName[today.getDay()]}, ${today.getDate()} de ${monName[today.getMonth()]}, Horário: ${h}:${m}</p>`
+  res.innerHTML += `<p>Boa Noite, Usuário! Hoje é ${dayName[today.getDay()]}, ${today.getDate()} de ${monName[today.getMonth()]}, Horário: ${h}:${m}</p>`
   img.src="img/night.png"
   document.body.style.background = '#515154'
 }
@@ -107,23 +107,19 @@
 
     //API NOTÍCIAS:
     
-    let titulo = document.getElementById('titulo');
-let intro  = document.getElementById('introducao');
+    let tittle = document.getElementById('tittle');
+let intro  = document.getElementById('intro');
 let link = document.getElementById('link')
 
-const url3 = `http://servicodados.ibge.gov.br/api/v3/noticias/`
+const url3 = `https://newsapi.org/v2/top-headlines?sources=google-news-br&apiKey=57aeeb83880a43ffaa8e9ac2fbc3bf06`
 
-    fetch(url3).then((response)=>{
-        return response.json()
+let req = new Request(url3)
+
+    fetch(req).then((response)=>{
+        return response.json();
     })
-    .then((data)=>{
-        console.log(data)
-        titulo.innerHTML = `${data.items[0].titulo}`
-        intro.innerHTML += `${data.items[0].introducao}`
-        var nUrl = data.items[0].link
-        console.log(nUrl);
-        Promise.all(nUrl);
-    })
-    .catch((err)=>{
-        document.body.innerHTML = 'erro'
-    })
+    .then((req) =>{
+      console.log(req)
+      tittle.innerHTML = `${req.articles[0].title}`
+      intro.innerHTML = `${req.articles[0].content} ${req.articles[0].description}`
+})
