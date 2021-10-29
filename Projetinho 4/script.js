@@ -1,4 +1,4 @@
-
+/*
   // Logica Saudação
 
     let today = new Date();
@@ -64,7 +64,7 @@
       
       getUserPosition();
 
-
+*/
       //API Cotações:
 
     function cotacao(moeda){
@@ -107,10 +107,17 @@
 
     //API NOTÍCIAS:
     
-    let tittle = document.getElementById('tittle');
-let intro  = document.getElementById('intro');
-let link = document.getElementById('link')
+    let tittle1 = document.getElementById('tittle1');
+let intro1  = document.getElementById('intro1');
+let link1 = document.getElementById('link1')
 
+let tittle2 = document.getElementById('tittle2');
+let intro2  = document.getElementById('intro2');
+let link2 = document.getElementById('link2')
+
+let tittle3 = document.getElementById('tittle3');
+let intro3  = document.getElementById('intro3');
+let link3 = document.getElementById('link3')
 const url3 = `https://newsapi.org/v2/top-headlines?sources=google-news-br&apiKey=57aeeb83880a43ffaa8e9ac2fbc3bf06`
 
 let req = new Request(url3)
@@ -120,6 +127,15 @@ let req = new Request(url3)
     })
     .then((req) =>{
       console.log(req)
-      tittle.innerHTML = `${req.articles[0].title}`
-      intro.innerHTML = `${req.articles[0].content} ${req.articles[0].description}`
+      tittle1.innerHTML = `${req.articles[0].title}`
+      intro1.innerHTML = `${req.articles[0].description}`
+
+      tittle2.innerHTML = `${req.articles[1].title}`
+      intro2.innerHTML = `${req.articles[1].description}`
+
+
+      tittle3.innerHTML = `${req.articles[2].title}`
+      intro3.innerHTML = `${req.articles[2].description}`
+      
+
 })

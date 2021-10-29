@@ -1,8 +1,5 @@
 body{
     background-color:#f8c990;
-    font: normal 15pt Arial;
-    text-align: center;
-
     
 }
 
@@ -41,19 +38,21 @@ input {
  
 }
 div#news{
-padding-top: 2cm;
-text-align: justify;
+padding: 2cm 5cm;
+text-align: start;
+font-family: Georgia, 'Times New Roman', Times, serif;
 
 }
 
-#tittle{
+#tittle1, #tittle2, #tittle3{
     font-size: 25px;
-    margin: 3px;
-    text-align: justify;
+    font-weight: bold;
+    margin: 5px;
+
 }
 
-#intro{
-    text-align: justify;
+#intro1, #intro2, #intro3{
+font-size: 18px;
 }
 
 footer{
