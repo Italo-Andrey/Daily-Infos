@@ -1,34 +1,25 @@
-/*
   // Logica Saudação
-
+  
     let today = new Date();
     let h = today.getHours();
-    let m = today.getMinutes();
-    
-    let dayName = new Array ("Domingo", "Segunda", "Terça", "Quarta", "Quinta", "Sexta", "Sabado");
-    let monName = new Array ("Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro");        
-                
-     let res = document.getElementById('res')
-    let img = document.getElementById('img')
+    let m = today.getMinutes();        
+  
+  
      if(h > 0 && h <10){
-      res.innerHTML += `<p>Bom Dia, Usuário! Hoje é ${dayName[today.getDay()]}, ${today.getDate()} de ${monName[today.getMonth()]}, Horário: 0${h}:${m}</p>`   
-       img.src="img/sunny.png"
+  
        document.body.style.background = '#e2cd9f'
   } else if(h>10 && h<12){
-    res.innerHTML += `<p>Bom Dia, Usuário! Hoje é ${dayName[today.getDay()]}, ${today.getDate()} de ${monName[today.getMonth()]}, Horário: ${h}:${m}</p>`
-    img.src="img/sunny.png"
+    
     document.body.style.background = '#e2cd9f'
    }  else if (h > 12 && h < 18){             
-    res.innerHTML = `<p>Boa Tarde, Usuário! Hoje é ${dayName[today.getDay()]}, ${today.getDate()} de ${monName[today.getMonth()]}, Horário: ${h}:${m}</p>`
-    img.src="img/cloudy-day.png"
+   
     document.body.style.background = '#b9846f'
 } else{
-  res.innerHTML += `<p>Boa Noite, Usuário! Hoje é ${dayName[today.getDay()]}, ${today.getDate()} de ${monName[today.getMonth()]}, Horário: ${h}:${m}</p>`
-  img.src="img/night.png"
+
   document.body.style.background = '#515154'
 }
   
-
+/*
       //API temperatura:
       function getUserPosition() {
         let url1;
@@ -67,43 +58,33 @@
 */
       //API Cotações:
 
-    function cotacao(moeda){
+      const urlD = `https://economia.awesomeapi.com.br/json/last/USD-BRL`
+      const urlE = `https://economia.awesomeapi.com.br/json/last/EUR-BRL`
+      let dolar = document.getElementById('dolar');
+      let euro = document.getElementById('euro');
 
-      let url2 = `https://economia.awesomeapi.com.br/json/last/${moeda}`
-      let ans = document.getElementById('valor');
+      fetch(urlD).then((usd)=>{
+        return usd.json();
+      }).then((usd)=>{
+        dolar.innerHTML += `Dolar: ${usd.USDBRL.ask}`
+      })
+      .catch((err) => {
+        dolar.innerHTML += `Erro de Operação, verifique se o Dev sabe o que faz. :p`
+      })
 
-      fetch(url2)
-      .then((cota) =>{
-        return cota.json();
+
+      fetch(urlE)
+      .then((eur) =>{
+        return eur.json();
         })
-      .then((cota) =>{
-        console.log(cota);
-      if(moeda == 'USD-BRL'){
-        let dolar = cota.USDBRL.ask;
-        ans.innerHTML = '';
-        ans.innerHTML += `Dolar hoje: ${dolar}`
-      }
-      if (moeda == 'EUR-BRL'){
-        let euro = cota.EURBRL.ask;
-        ans.innerHTML = '';
-        ans.innerHTML += `Euro hoje: ${euro}`
-      }
+      .then((eur) =>{
+        euro.innerHTML = `Euro: ${eur.EURBRL.ask}`;
+        
         })
       .catch((err) => {
-        ans.innerHTML += `Erro de Operação, verifique se o Dev sabe o que faz. :p`
+        euro.innerHTML += `Erro de Operação, verifique se o Dev sabe o que faz. :p`
       })
       
-    }
-
-    function dolar(){
-      const moeda = `USD-BRL`;
-        cotacao(moeda);
-    }
-
-    function euro(){
-     const moeda = `EUR-BRL`;
-      cotacao(moeda);
-    }
 
     //API NOTÍCIAS:
     
