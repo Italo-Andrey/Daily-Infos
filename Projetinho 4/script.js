@@ -18,45 +18,6 @@
 
   document.body.style.background = '#515154'
 }
-  
-/*
-      //API temperatura:
-      function getUserPosition() {
-        let url1;
-        navigator.geolocation.getCurrentPosition((pos) => {
-          let lat = pos.coords.latitude;
-          let long = pos.coords.longitude;
-          url1 = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&units=imperial&APPID=95b11822eb429c84c1143a19251b1881`;
-          fetchApi(url1);
-        });
-      }
-    
-      
-    function fetchApi(url1) {
-        let city = document.querySelector('.city');
-        let temp = document.querySelector('.city');
-
-        fetch(url1)
-        .then((data) => {
-          return data.json();
-        })
-        .then((data) => {
-          let tempInCelsius = ((5/9) * (data.main.temp-32)).toFixed(1);
-          city.innerText = `Hoje a temperatura em ${data.name} é de `;
-          city.innerText += ` ${tempInCelsius}°C`;
-          console.log(data);
-
-        })
-        .catch((err) => {
-          city.innerText = `Impossível acessar o OpenWeather. Verifique a sua conexão.`;
-          temp.innerText = `-`;
-        })
-      }
-      
-      getUserPosition();
-
-*/
-      //API Cotações:
 
       const urlD = `https://economia.awesomeapi.com.br/json/last/USD-BRL`
       const urlE = `https://economia.awesomeapi.com.br/json/last/EUR-BRL`
