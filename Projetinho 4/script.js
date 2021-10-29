@@ -66,7 +66,7 @@
       fetch(urlD).then((usd)=>{
         return usd.json();
       }).then((usd)=>{
-        dolar.innerHTML += `Dolar: ${usd.USDBRL.ask}`
+        dolar.innerHTML += `<b>Dolar<b>: ${usd.USDBRL.ask}`
       })
       .catch((err) => {
         dolar.innerHTML += `Erro de Operação, verifique se o Dev sabe o que faz. :p`
@@ -78,7 +78,7 @@
         return eur.json();
         })
       .then((eur) =>{
-        euro.innerHTML = `Euro: ${eur.EURBRL.ask}`;
+        euro.innerHTML = `<b>Euro<b>: ${eur.EURBRL.ask}`;
         
         })
       .catch((err) => {
@@ -99,6 +99,11 @@ let link2 = document.getElementById('link2')
 let tittle3 = document.getElementById('tittle3');
 let intro3  = document.getElementById('intro3');
 let link3 = document.getElementById('link3')
+
+let tittle4 = document.getElementById('tittle4');
+let intro4  = document.getElementById('intro4');
+let link4 = document.getElementById('link4')
+
 const url3 = `https://newsapi.org/v2/top-headlines?sources=google-news-br&apiKey=57aeeb83880a43ffaa8e9ac2fbc3bf06`
 
 let req = new Request(url3)
@@ -117,6 +122,9 @@ let req = new Request(url3)
 
       tittle3.innerHTML = `${req.articles[2].title}`
       intro3.innerHTML = `${req.articles[2].description}`
+
+      tittle4.innerHTML = `${req.articles[3].title}`
+      intro4.innerHTML = `${req.articles[3].description}`
       
 
 })

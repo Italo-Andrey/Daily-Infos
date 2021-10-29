@@ -15,43 +15,37 @@ section {
     border-radius: 10px;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.192);
 }
-div#saudacao{
-    text-align: start;
+
+#cota{
+    font-family: Open Sans,sans-serif;
 }
-p.city{
-    text-align: center;
-    line-height: 100px;
-} 
-input {
-    color: white;
-    background-color: #bb2d3b;
-    border-color: #b02a37;;
-    padding: 0px 20px;
-    text-align: center;
-    line-height: 1.5;
-    font-weight: 400;
-    border: 1px transparent;
-    padding: .375rem .75rem;
-    font-size: 1rem;
-    border-radius: 10px;
-    cursor: pointer;
- 
+
+#dolar{
+    position: relative;
+    top: 119px;
+    left: 675px;
 }
+#euro{
+    position: relative;
+    top: 85px;
+    left: 800px;
+}
+
 div#news{
-padding: 2cm 5cm;
+padding: 10px 300px 0px 40px;
 text-align: start;
-font-family: Georgia, 'Times New Roman', Times, serif;
+font-family: Open Sans,sans-serif;
 
 }
 
-#tittle1, #tittle2, #tittle3{
+#tittle1, #tittle2, #tittle3, #tittle4{
     font-size: 25px;
     font-weight: bold;
-    margin: 5px;
+    padding: 15px 0px;
 
 }
 
-#intro1, #intro2, #intro3{
+#intro1, #intro2, #intro3, #intro4{
 font-size: 18px;
 }
 
