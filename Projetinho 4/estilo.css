@@ -23,16 +23,16 @@ section {
 #dolar{
     position: relative;
     top: 119px;
-    left: 675px;
+    left: 1400px;
 }
 #euro{
     position: relative;
     top: 85px;
-    left: 800px;
+    left: 1650px;
 }
 
-div#news{
-padding: 10px 300px 0px 40px;
+div#generalNews{
+padding: 10px 600px 0px 200px;
 text-align: start;
 font-family: Open Sans,sans-serif;
 
