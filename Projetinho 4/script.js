@@ -4,6 +4,15 @@
     let h = today.getHours();
     let m = today.getMinutes();        
   
+  const url = {
+      urlDolar: `https://economia.awesomeapi.com.br/json/last/USD-BRL`,
+
+      urlEuro: `https://economia.awesomeapi.com.br/json/last/EUR-BRL`,
+
+      urlNews: `https://newsapi.org/v2/top-headlines?sources=google-news-br&apiKey=57aeeb83880a43ffaa8e9ac2fbc3bf06`,
+    
+      urlTec: `https://newsapi.org/v2/top-headlines?country=br&category=technology&apiKey=57aeeb83880a43ffaa8e9ac2fbc3bf06`
+    }
   
      if(h > 0 && h <10){
   
@@ -19,12 +28,10 @@
   document.body.style.background = '#515154'
 }
 
-      const urlD = `https://economia.awesomeapi.com.br/json/last/USD-BRL`
-      const urlE = `https://economia.awesomeapi.com.br/json/last/EUR-BRL`
       let dolar = document.getElementById('dolar');
       let euro = document.getElementById('euro');
 
-      fetch(urlD).then((usd)=>{
+      fetch(url.urlDolar).then((usd)=>{
         return usd.json();
       }).then((usd)=>{
         dolar.innerHTML += `<b>Dolar<b>: ${usd.USDBRL.ask}`
@@ -34,7 +41,7 @@
       })
 
 
-      fetch(urlE)
+      fetch(url.urlEuro)
       .then((eur) =>{
         return eur.json();
         })
@@ -49,7 +56,7 @@
 
     //API NOTÍCIAS:
     
-    let tittle1 = document.getElementById('tittle1');
+let tittle1 = document.getElementById('tittle1');
 let intro1  = document.getElementById('intro1');
 let link1 = document.getElementById('link1')
 
@@ -65,9 +72,8 @@ let tittle4 = document.getElementById('tittle4');
 let intro4  = document.getElementById('intro4');
 let link4 = document.getElementById('link4')
 
-const url3 = `https://newsapi.org/v2/top-headlines?sources=google-news-br&apiKey=57aeeb83880a43ffaa8e9ac2fbc3bf06`
 
-let req = new Request(url3)
+let req = new Request(url.urlNews)
 
     fetch(req).then((response)=>{
         return response.json();
@@ -89,3 +95,20 @@ let req = new Request(url3)
       
 
 })
+
+
+/*
+let request = new Request(url.urlTec)
+
+let tecTittle = document.getElementById('tecTittle');
+let tecIntro  = document.getElementById('tecIntro');
+
+
+fetch(request).then((resp)=>{
+  return resp.json();
+})
+.then((request)=>{
+  tecTittle.innerHTML = `${request.articles[0].title}`
+  tecIntro.innerHTML = `${request.articles[0].description}`
+
+})*/
