@@ -30,9 +30,27 @@ section {
     top: 85px;
     left: 1650px;
 }
+#tecNews{
+    padding: 5px 1400px 0px 110px;
+    position: relative;
+    top: 85px;
+    left: 1300px; 
+    font-family: Open Sans,sans-serif; 
+}
 
+#tecTittle{
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#tecIntro{
+    font-size: 16px;
+}
 div#generalNews{
-padding: 10px 600px 0px 200px;
+    position: relative;
+    bottom: 220px;
+
+padding: 5px 800px 0px 300px;
 text-align: start;
 font-family: Open Sans,sans-serif;
 

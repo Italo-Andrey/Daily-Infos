@@ -11,7 +11,7 @@
 
       urlNews: `https://newsapi.org/v2/top-headlines?sources=google-news-br&apiKey=57aeeb83880a43ffaa8e9ac2fbc3bf06`,
     
-      urlTec: `https://newsapi.org/v2/top-headlines?country=br&category=technology&apiKey=57aeeb83880a43ffaa8e9ac2fbc3bf06`
+      urlTec: `https://newsapi.org/v2/top-headlines?category=science&country=br&apiKey=57aeeb83880a43ffaa8e9ac2fbc3bf06`
     }
   
      if(h > 0 && h <10){
@@ -81,23 +81,23 @@ let req = new Request(url.urlNews)
     .then((req) =>{
       console.log(req)
       tittle1.innerHTML = `${req.articles[0].title}`
-      intro1.innerHTML = `${req.articles[0].description}`
+      intro1.innerHTML = `${req.articles[0].content.slice(0,200)}`
 
       tittle2.innerHTML = `${req.articles[1].title}`
-      intro2.innerHTML = `${req.articles[1].description}`
+      intro2.innerHTML = `${req.articles[1].content.slice(0,200)}`
 
 
       tittle3.innerHTML = `${req.articles[2].title}`
-      intro3.innerHTML = `${req.articles[2].description}`
+      intro3.innerHTML = `${req.articles[2].content.slice(0,200)}`
 
       tittle4.innerHTML = `${req.articles[3].title}`
-      intro4.innerHTML = `${req.articles[3].description}`
+      intro4.innerHTML = `${req.articles[3].content.slice(0,200)}`
       
 
 })
 
 
-/*
+
 let request = new Request(url.urlTec)
 
 let tecTittle = document.getElementById('tecTittle');
@@ -108,7 +108,7 @@ fetch(request).then((resp)=>{
   return resp.json();
 })
 .then((request)=>{
+  console.log(request)
   tecTittle.innerHTML = `${request.articles[0].title}`
-  tecIntro.innerHTML = `${request.articles[0].description}`
-
-})*/
+  tecIntro.innerHTML = `${request.articles[0].content.slice(0,200)}`
+})
